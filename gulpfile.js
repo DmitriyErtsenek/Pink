@@ -8,8 +8,9 @@ var gulp         = require('gulp'),
 	del          = require('del'),
 	imagemin     = require('gulp-imagemin'),
 	pngquant     = require('imagemin-pngquant'),
-	cache        =require('gulp-cache'),
-    autoprefixer =require('gulp-autoprefixer');
+	cache        = require('gulp-cache'),
+    autoprefixer = require('gulp-autoprefixer'),
+    plumber      = require('gulp-plumber');
 	
 
 gulp.task('scripts', function() {
@@ -31,7 +32,12 @@ gulp.task('css-libs', ['less'], function() {
 });
 
 gulp.task('less', function() {
-	return gulp.src('app/less/**/*.less')
+	return gulp.src(['app/less/main.less', 'app/less/libs.less' ])
+	.pipe(plumber(function(error)
+	{
+		console.log(error);
+		this.emit('end');
+	}))	
 	.pipe(less())
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true }))
 	.pipe(gulp.dest('app/css'))
