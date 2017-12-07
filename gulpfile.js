@@ -1,16 +1,18 @@
-var gulp         = require('gulp'), 
-    less         = require('gulp-less'),
-    browserSync  = require('browser-sync'),
-    concat       = require('gulp-concat'),
-    uglify       = require('gulp-uglifyjs'),
-    cssnano      = require('gulp-cssnano'),
-    rename       = require('gulp-rename'),
-    del          = require('del'),
-    imagemin     = require('gulp-imagemin'),
-    pngquant     = require('imagemin-pngquant'),
-    cache        =require('gulp-cache'),
-    autoprefixer =require('gulp-autoprefixer');
-    
+var gulp       = require('gulp'), 
+  less         = require('gulp-less'),
+	browserSync  = require('browser-sync'),
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglifyjs'),
+	cssnano      = require('gulp-cssnano'),
+	rename       = require('gulp-rename'),
+	del          = require('del'),
+	imagemin     = require('gulp-imagemin'),
+	pngquant     = require('imagemin-pngquant'),
+	cache        = require('gulp-cache'),
+  autoprefixer = require('gulp-autoprefixer'),
+  plumber      = require('gulp-plumber');
+	
+
 
 gulp.task('scripts', function() {
     return gulp.src([
@@ -31,11 +33,16 @@ gulp.task('css-libs', ['less'], function() {
 });
 
 gulp.task('less', function() {
-    return gulp.src('app/less/**/*.less')
-    .pipe(less())
-    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true }))
-    .pipe(gulp.dest('app/css'))
-    .pipe(browserSync.reload({stream: true}))
+	return gulp.src(['app/less/main.less', 'app/less/libs.less' ])
+	.pipe(plumber(function(error)
+	{
+		console.log(error);
+		this.emit('end');
+	}))	
+	.pipe(less())
+	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true }))
+	.pipe(gulp.dest('app/css'))
+	.pipe(browserSync.reload({stream: true}))
 });
 
 
