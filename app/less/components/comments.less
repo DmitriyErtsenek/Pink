@@ -1,0 +1,145 @@
+.comments {
+  width: 100%;
+  min-height: 354px;
+  background-color: #fff;
+
+  &__wrapper {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+  }
+
+  &__slider {
+    width: 100%;
+  }
+  
+  &__item {
+    text-align: center;
+  }
+
+  &__user {
+    font-family: @open-sans;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #000000;
+  
+    &-about {
+      display: none;    
+    }
+  }
+
+  &__item p {
+    font-family: @open-sans;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #283645;
+  }
+
+  & .owl-dots {
+    display: flex;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    justify-content: space-between;
+
+  }
+  
+  & .owl-dot {
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #283645;
+    opacity: 0.3;
+  }
+
+  & .owl-dot.active {
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    opacity: 1;
+   
+  }
+}
+
+@media @tablet-width {
+  .comments {
+    min-height: 270px;
+    
+    &__wrapper {
+      width: 620px;
+      padding-top: 10px;
+    }
+    
+    &__user,
+    &__user-about {
+      order: 2;
+    }
+    
+    &__user-about {
+      display: block;
+      font-family: @open-sans;
+      font-size: 14px;
+      line-height: 30px;
+      font-weight: 400;
+      color: @nav-color;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 22px;
+    
+      & .active {
+        width: 620px;
+      }
+    
+      & p {
+        font-size: 18px;
+        order: 1;
+        margin-bottom: 36px; 
+      }
+    }
+  }
+}
+
+
+@media @desktop-width {
+  .comments {
+    min-height: 415px;
+    padding-top: 187px;
+    box-sizing: border-box;
+    background-image: url("../../img/quotes.svg");
+    background-repeat: no-repeat;
+    background-size: 79px 63px;
+    background-position: 50% 20%;
+    
+    .owl-dots {
+      display: none;
+    }
+
+    &__user {
+      font-size: 24px;
+    }
+    
+    &__user-about {
+      font-size: 18px;
+    }
+
+    &__quotes {
+      display: none;
+    }
+
+    &__wrapper {
+      width: 700px;
+    }
+
+    
+  }
+}

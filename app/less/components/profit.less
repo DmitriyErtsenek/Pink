@@ -1,0 +1,117 @@
+.profit {
+  width: 100%;
+  min-height: 350px;
+  background-color: #fff;
+  padding-top: 57px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 620px;
+    margin: 0 auto;
+  } 
+
+  &__clock {
+    position: relative;
+    width: 240px;
+    height: 280px;
+    background-image: url("../../img/clock.svg");
+    background-repeat: no-repeat;
+    background-size: 240px 280px;
+  
+    &::before {
+      position: absolute;
+      content: "24";
+      color: #d22856;
+      font-family: @open-sans;
+      font-size: 96px;
+      line-height: 150px;
+      font-weight: 700;
+      left: 65px;
+      top: 80px;
+    }
+  }
+  
+  &__desktop-br {
+    display: none;
+  }
+
+  &__text {
+    width: 310px;
+
+    & h2 {
+      font-family: @open-sans;
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: 700;
+      margin-top: 38px;
+      margin-bottom: 15px;
+    }
+  
+    & p,
+    & a {
+      font-family: @open-sans;
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #283645;
+      margin-bottom: 10px;
+    }
+  
+    & a {
+      color: #d22856;
+    }
+  }
+}
+
+@media @mobile-width {
+  .profit {
+    display: none;
+  }
+}
+
+@media @desktop-width {
+  .profit {
+    background-color: #f2f2f2;
+    min-height: 417px;
+    padding-top: 40px;
+  
+    &__clock {
+    position: relative;
+    width: 300px;
+    height: 345px;
+    background-size: 300px 345px;
+    
+      &::before {
+      font-size: 120px;
+      line-height: 187px;
+      left: 80px;
+      top: 100px;
+      }
+    }
+    
+    &__desktop-br {
+      display: inline;
+    }
+
+    &__text {
+      width: 570px;
+      padding-top: 50px;
+
+        & p,
+        & a {
+        font-size: 18px;
+        line-height: 30px;
+        
+      }
+    }
+  
+    &__wrapper {
+      width: 940px;
+    }
+  
+    &__tablet-br {
+      display: none;
+    }
+  }
+}

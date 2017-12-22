@@ -1,0 +1,140 @@
+.price {
+  width: 100%;
+  min-height: 470px;
+  background-color: #f2f2f2; 
+  background-image: url("../../img/decorateblock.svg");
+  background-repeat: no-repeat;
+  padding-top: 85px;
+  box-sizing: border-box;
+
+  &__slider {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 98px;
+    width: 100%;
+    background-color: #283645;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 19px;
+    padding-bottom: 19px;
+
+    & h2 {
+      display: flex;
+      flex-direction: column;
+      font-family: @open-sans;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff; 
+      margin: 0px;
+      padding: 0px;
+    }
+    
+    &--hit::before {
+      content: "Хит";
+      font-family: @open-sans;
+      font-size: 14px;
+      line-height: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      position: absolute;
+      width: 104px;
+      height: 30px;
+      background-image: url("../img/decorate-hit.svg");
+      background-repeat: no-repeat;
+      transform: rotate(-45deg);
+      left: -26px;
+      top: 11px;
+
+    }
+
+    & span {
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+
+  &__row {
+    box-sizing: border-box;
+    font-family: @open-sans;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #283645;
+    min-height: 61px;
+    text-align: left;
+    background-color: #fff;
+    border: 2px solid #e5e5e5;
+    border: 2px solid #e5e5e5;
+    border-top: none;
+    padding-top: 14px;
+    padding-left: 24px;
+
+    &--yes {
+      background-image: url("../img/yes.svg");
+      background-size: 33px 22px;
+      background-repeat: no-repeat;
+      background-position: 90% 50%;
+
+    }
+  
+    &--no {
+      background-image: url("../img/No.svg");
+      background-size: 27px 26px;
+      background-repeat: no-repeat;
+      background-position: 90% 50%;
+    }
+  }
+
+  & .owl-dots {
+    display: flex;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    justify-content: space-between;
+
+  }
+  
+  & .owl-dot {
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #283645;
+    opacity: 0.3;
+  }
+
+  & .owl-dot.active {
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    opacity: 1;
+   
+  }
+  
+}
+
+@media @tablet-width {
+  .price {
+    display: none;
+  }
+}
+
+@media @desktop-width {
+  .price {
+    display: none;
+  }
+}
