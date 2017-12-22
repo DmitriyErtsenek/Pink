@@ -1,17 +1,96 @@
 .page-header {
 	display: flex;
+	position: relative;
 	flex-direction: column;
-	width: 320px;
-	background-color: red;
+	width: 100%;
+	min-height: auto;
 	margin-right: auto;
 	margin-left: auto;
 
 
-	&__logo {
+			
+	&__bg {
 		width: 100%;
-		min-height: 70px;
-		box-sizing: border-box;
-		padding: 20px;
-		background-color: @nav-color;
+    height: 460px;
+    margin-top: -70px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../../img/iphone-hand-mobile.png"), url("../../img/background-mobile@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 18% 100% ,52% 0;
+    background-size: 258px 286px, 700px 488px;
+  
+      @media @retina2x {
+        background-image: url("../../img/iphone-hand-mobile@2x.png"), url("../../img/background-mobile@2x.jpg");
+      }
+    
+      @media @retina3x {
+        background-image: url("../../img/iphone-hand-mobile@3x.png"), url("../../img/background-mobile@3x.jpg");
+      }
+
+      @media all and (orientation: landscape), all and (min-width: 480px) {
+      	background-position: 43% 100% ,52% 0;
+      }
 	}
 }
+
+
+
+
+@media @tablet-width {
+	.page-header {
+		background-repeat: no-repeat;
+		background-image: url("../../img/iphone-hand-tablet@1x.png"), url("../../img/background-tablet@1x.jpg");
+		background-size: 700px 545px, 1200px 729px;
+		background-position: 40% 184px ,50% 0%;
+		min-height: 729px;
+		
+		@media @retina2x {
+			background-image: url("../../img/iphone-hand-tablet@2x.png"), url("../../img/background-tablet@2x.jpg");
+		}
+
+		&__bg {
+			display: none;
+			background-image: none;
+		}
+	
+		&__wrapper {
+      width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+	}		
+}
+
+	
+	@media @mobile-width {
+	.page-header {
+		background-image: none;
+	}
+}		
+
+
+@media @desktop-width {
+	.page-header {
+		min-height: 853px;
+		background-image: url("../../img/iphone-hand-desktop@1x.png"), url("../../img/background-fullsize.jpg");
+		background-size: 1050px 645px, 2560px 1707px;
+		// background-size: 998px 613px, 2560px 1707px;
+		background-position: 58% 210px ,50% 79.5%;
+	
+		&__wrapper {
+			width: 940px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+
+
+
+
+
+
+ 
+ 

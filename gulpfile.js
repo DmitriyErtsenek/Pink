@@ -8,16 +8,30 @@ var gulp       = require('gulp'),
 	del          = require('del'),
 	imagemin     = require('gulp-imagemin'),
 	pngquant     = require('imagemin-pngquant'),
+	mozjpeg      = require('imagemin-mozjpeg'),
 	cache        = require('gulp-cache'),
   autoprefixer = require('gulp-autoprefixer'),
-  plumber      = require('gulp-plumber');
+  plumber      = require('gulp-plumber'),
+  svgstore     = require('gulp-svgstore'),
+  svgmin       = require('gulp-svgmin'),
+  debug        = require('gulp-debug');
 	
+
+gulp.task('symbols', function() {
+	return gulp.src('app/svg/*.svg')
+		.pipe(svgmin())
+		.pipe(svgstore({
+			inlineSvg: true
+		}))
+		.pipe(rename('symbols.svg'))
+		.pipe(gulp.dest('app/img/sprite'));
+});
 
 
 gulp.task('scripts', function() {
     return gulp.src([
         'app/libs/jquery/dist/jquery.min.js',
-        'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
+        'app/libs/owl.carousel/dist/owl.carousel.min.js'
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -33,7 +47,7 @@ gulp.task('css-libs', ['less'], function() {
 });
 
 gulp.task('less', function() {
-	return gulp.src(['app/less/main.less', 'app/less/libs.less' ])
+	return gulp.src('app/less/main.less')
 	.pipe(plumber(function(error)
 	{
 		console.log(error);
@@ -41,6 +55,7 @@ gulp.task('less', function() {
 	}))	
 	.pipe(less())
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], { cascade: true }))
+	.pipe(cssnano())
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.reload({stream: true}))
 });
@@ -66,18 +81,22 @@ gulp.task('clear', function() {
 });
 
 
-
 gulp.task('img', function() {
-    return gulp.src('app/img/**/*')
-    .pipe(cache(imagemin({
-        interlaced: true,
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        une: [pngquant()]
-    })))
-    .pipe(gulp.dest('dist/img'));
+    return gulp.src('app/img/*.*')
+    		.pipe(debug({title: 'unicorn:'}))
+        .pipe(imagemin([
+            pngquant({
+      						quality: '95'
+            }),
+            mozjpeg({
+            			progressive: true,
+            			quality: '85'
+            })
+        ],{
+            verbose: true
+        }))
+        .pipe(gulp.dest('dist/img'))
 });
-
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('app/less/**/*.less', ['less']);
