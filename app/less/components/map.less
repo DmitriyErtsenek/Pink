@@ -1,0 +1,50 @@
+.map-wrapper {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 73px;
+    top: -1px;
+    width: 100%;
+    background-image: url("../../img/decorateblock2.svg");
+    background-repeat: no-repeat;
+    z-index: 2;
+
+  }
+}
+
+#map {
+  width: 100%;
+  height: 200px;
+}
+
+@media @tablet-width {
+  #map {
+    height: 380px;
+  }
+
+  .map-wrapper {
+    &::before {
+      height: 140px;
+    }
+  }
+}
+
+@media @desktop-width {
+  .map-wrapper {
+    &::before {
+      height: 180px;
+      left: 50%;
+      margin-left: -50%;
+    }
+  }
+}
+
+@media @large-desktop-width {
+  .map-wrapper  {
+    &::before {
+      display: none;
+    }
+  }
+}
+

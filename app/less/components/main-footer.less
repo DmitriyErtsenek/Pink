@@ -1,0 +1,142 @@
+.main-footer {
+  min-height: 127px;
+  
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+
+  }
+
+  &__logo-footer {
+    box-sizing: border-box;
+    padding-top: 35px;
+    height: 127px;
+    width: 150px;
+
+    &:hover path {
+      fill: @pink-color;
+    }
+
+    &:active .text {
+      fill: #000;
+      opacity: 0.3;
+    }
+
+    &:active .glasses {
+      fill: @pink-color;
+      opacity: 0.3;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+  }
+
+  &__link {
+    width: 45px;
+    height: 45px;
+    font-size: 0px;
+    border: 3px solid rgba(40, 54, 69, 0.1);
+    border-radius: 50%;
+  
+    &:hover {
+      border-color: @nav-color;
+    }
+
+    &:active {
+      border-color: rgba(40, 54, 69, 0.1);
+      opacity: 0.3;
+    }
+
+    &--twitter {
+      background-image: url("../../img/twitterIcon.svg");
+      background-repeat: no-repeat;
+      background-size: 18px 14px;
+      background-position: 50% 50%;
+    }
+
+    &--facebook {
+      background-image: url("../../img/facebookIcon.svg");
+      background-repeat: no-repeat;
+      background-size: 9px 18px;
+      background-position: 50% 50%;
+    }
+
+    &--playmarket {
+      background-image: url("../../img/playmarketIcon.svg");
+      background-repeat: no-repeat;
+      background-size: 15px 13px;
+      background-position: 50% 50%;
+    }
+  }
+
+  &__developed-by {
+    display: flex;
+    
+    
+    & a {
+      display: flex;
+      width: 150px;
+      align-items: center;
+      text-decoration: none;
+    
+      &:hover path {
+        fill: @nav-color;
+      }
+
+      &:active path {
+        opacity: 0.3;
+      }
+    }
+
+    & p {
+      margin-left: 21px;
+      font-family: @open-sans;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      color: #283645;
+    }
+  }
+
+  &__HtmlAcademyLogo {
+    width: 27px;
+    height: 34px;
+    margin-left: auto;
+      
+    & path {
+      fill: @pink-color;
+    }
+
+
+  }
+}
+
+@media @mobile-width {
+  .main-footer {
+    display: none;
+  }
+}
+
+@media @large-desktop-width {
+  .main-footer__wrapper {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1660px;
+      height: 180px;
+      background-image: url("../../img/decorateblock2.svg");
+      background-repeat: no-repeat;
+      z-index: 2;
+      top: -381px;
+    }
+  }
+}
+
