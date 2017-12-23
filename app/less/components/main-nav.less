@@ -266,6 +266,7 @@
 @media @desktop-width {
   
   .main-nav {
+    position: relative;
     background-color: rgba(0, 0, 0, 0.3);
     min-height: 110px;
 
@@ -275,10 +276,6 @@
       margin-left: auto;
       margin-right: auto;
       justify-content: row;
-    }
-
-    &__logo-wrapper {
-      background-color: transparent;
     }
 
     &__item {
@@ -314,12 +311,8 @@
       display: flex;
       justify-content: space-between;
       flex-direction: row;
-      box-sizing: border-box;
-      width: 790px;
+      width: 620px;
       padding-top: 32px;
-      padding-right: 30px;
-      
-      
     }
     
     &__item a {
@@ -327,12 +320,14 @@
     }
 
     &__logo-wrapper {
+      background-color: transparent;
       width: auto;
       padding-top: 30px;
-      padding-left: 25px;
+      padding-left: 0px;
       padding-right: 0px;
-      margin-right: 155px;
+      margin-right: 170px;
       border: none;
     }
   }
 }
+
