@@ -123,19 +123,41 @@
   }
 }
 
-@media @large-desktop-width {
-  .main-footer__wrapper {
-    position: relative;
+@media @desktop-width {
+  .main-footer {
+    min-height: 197px;
 
-    &:before {
-      content: "";
-      position: absolute;
-      width: 1660px;
-      height: 180px;
-      background-image: url("../../img/decorateblock2.svg");
-      background-repeat: no-repeat;
-      z-index: 2;
-      top: -381px;
+    &__wrapper {
+      padding-top: 37px;
+    }
+ 
+    &__developed-by {
+      width: 160px;
+
+      & p {
+        font-size: 18px;
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media @large-desktop-width {
+  .main-footer {
+
+    &__wrapper {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 1660px;
+        height: 180px;
+        background-image: url("../../img/decorateblock2.svg");
+        background-repeat: no-repeat;
+        z-index: 2;
+        top: -381px;
+      }
     }
   }
 }

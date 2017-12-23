@@ -73,16 +73,39 @@
 @media @desktop-width {
 	.page-header {
 		min-height: 853px;
-		background-image: url("../../img/iphone-hand-desktop@1x.png"), url("../../img/background-fullsize.jpg");
-		background-size: 1050px 645px, 2560px 1707px;
-		// background-size: 998px 613px, 2560px 1707px;
-		background-position: 58% 210px ,50% 79.5%;
+		background-image: url("../../img/background-fullsize.jpg");
+		background-size: 2560px 1707px;
+		background-position: 50% 79.5%;
 	
 		&__wrapper {
 			width: 940px;
 			margin-left: auto;
 			margin-right: auto;
 		}
+
+    &__bg {
+      display: flex;
+      width: 1200px;
+      height: 0px;
+      margin: 0 auto;
+
+      &:before {
+        position: absolute;
+        content: "";
+        left: 455px;
+        top: 208px;
+        width: 575px;
+        height: 645px;
+        background-image: url("../../img/iphone-hand-desktop@1x.png");
+        background-position: -310px 0px;
+        background-repeat: no-repeat;
+        background-size: 1050px 645px;
+      
+        @media @retina2x {
+          background-image: url("../../img/iphone-hand-desktop@2x.png");
+        }
+      }
+    }
 	}
 }
 

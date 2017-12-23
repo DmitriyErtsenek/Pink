@@ -3,11 +3,15 @@
   min-height: 354px;
   background-color: #fff;
 
+  & .owl-nav {
+    display: none;
+  }
+
   &__wrapper {
     width: 280px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 50px;
+    padding-top: 42px;
   }
 
   &__slider {
@@ -43,7 +47,7 @@
     width: 60px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 15px;
     justify-content: space-between;
 
   }
@@ -71,6 +75,10 @@
 @media @tablet-width {
   .comments {
     min-height: 270px;
+
+    & .owl-nav {
+      display: none;
+    }
     
     &__wrapper {
       width: 620px;
@@ -113,7 +121,7 @@
 @media @desktop-width {
   .comments {
     min-height: 415px;
-    padding-top: 187px;
+    padding-top: 156px;
     box-sizing: border-box;
     background-image: url("../../img/quotes.svg");
     background-repeat: no-repeat;
@@ -123,6 +131,32 @@
     .owl-dots {
       display: none;
     }
+    
+    .owl-next {
+      position: absolute;
+      font-size: 0px;
+      opacity: 0.3;
+      width: 22px;
+      height: 41px;
+      bottom: 140px;
+      left: -120px;
+      background-image: url("../../img/navIcon.svg");
+      background-size: 22px 41px;
+    }
+
+    .owl-prev {
+      position: absolute;
+      font-size: 0px;
+      opacity: 0.3;
+      width: 22px;
+      height: 41px;
+      bottom: 140px;
+      right: -120px;
+      transform: rotate(180deg);
+      background-image: url("../../img/navIcon.svg");
+      background-size: 22px 41px;
+    }
+
 
     &__user {
       font-size: 24px;
