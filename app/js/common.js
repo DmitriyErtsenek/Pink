@@ -52,7 +52,7 @@ $(document).ready(function(){
     loop:true, //Зацикливаем слайдер
     margin:10, //Отступ от картино если выводите больше 1
     nav:true, //Отключил навигацию
-    autoplay:true, //Автозапуск слайдера
+    autoplay:false, //Автозапуск слайдера
     smartSpeed:1000, //Время движения слайда
     autoplayTimeout:7000, //Время смены слайда
     responsive:{ //Адаптация в зависимости от разрешения экрана
@@ -91,6 +91,62 @@ $(document).ready(function(){
     }
   });
 });
+
+$('.app-editor__range-input').jRange({
+    from: 0,
+    to: 100,
+    step: 1,
+    theme: false,
+    showScale: false,
+    showLabels: false,
+    format: '%s',
+    width: 240,
+    showLabels: true,
+    snap: true
+});
+
+$('.app-editor__range-crop-input').jRange({
+    from: 0,
+    to: 100,
+    step: 1,
+    theme: false,
+    showScale: false,
+    showLabels: false,
+    format: '%s',
+    width: 202,
+    showLabels: true,
+    snap: true
+});
+
+$('.app-editor__range-fill-input').jRange({
+    from: 0,
+    to: 100,
+    step: 1,
+    theme: false,
+    showScale: false,
+    showLabels: false,
+    format: '%s',
+    width: 202,
+    showLabels: true,
+    snap: true
+});
+
+$('.app-editor__range-contrast-input').jRange({
+    from: 0,
+    to: 100,
+    step: 1,
+    theme: false,
+    showScale: false,
+    showLabels: false,
+    format: '%s',
+    width: 202,
+    showLabels: true,
+    snap: true
+});
+
+
+
+
 
 
       

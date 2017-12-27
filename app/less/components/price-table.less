@@ -6,6 +6,15 @@
   padding-top: 86px;
   background-image: url("../../img/decorateblock.svg");
   background-repeat: no-repeat;
+  background-position: 50% 0;  
+  background-size: 101% auto;
+  
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+     background-position: 50% -1px;
+     background-size: 101% auto;
+     background-image: url("../../img/decorateblock-for-IE.svg");
+  }
   
   &--hit::before {
     content: "Хит";
@@ -130,3 +139,4 @@
     }
   }
 }
+
