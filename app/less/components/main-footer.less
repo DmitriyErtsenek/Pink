@@ -4,8 +4,8 @@
   
   &__wrapper {
     display: flex;
-    justify-content: space-around;
-    max-width: 1200px;
+    justify-content: space-between;
+    max-width: 940px;
     margin: 0 auto;
 
   }
@@ -29,6 +29,24 @@
       fill: @pink-color;
       opacity: 0.3;
     }
+  }
+
+  &__logo-desktop {
+      display: none;
+
+      &:hover {
+        .text {
+          fill: @pink-color;
+        }
+      }
+
+      &:active {
+        opacity: 0.3;
+
+        .text {
+          fill: #000;
+        }
+      }
   }
 
   &__links {
@@ -132,6 +150,10 @@
       padding-top: 40px;
       height: auto;
     }
+
+    &__logo-desktop {
+      display: none;
+    }
     
     &__link {
       text-indent: -9999px;
@@ -159,13 +181,26 @@
 @media @desktop-width {
   .main-footer {
     min-height: 197px;
+    
+    &__logo-desktop {
+      display: block;
+    }
+
+    &__logo-tablet {
+      display: none;
+    }
 
     &__wrapper {
       padding-top: 42px;
+
+      &-photo {
+        padding-top: 60px;
+      }
     }
  
     &__developed-by {
-      width: 160px;
+      width: 150px;
+      margin-right: 0px;
 
       & p {
         font-size: 18px;
@@ -190,6 +225,13 @@
         background-repeat: no-repeat;
         z-index: 2;
         top: -510px;
+        left: -360px;
+      }
+    }
+
+    &__wrapper-photo {
+      &:before {
+        display: none;
       }
     }
   }

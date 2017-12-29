@@ -32,7 +32,7 @@
   .main-post {
     overflow: hidden;
     height: 509px;
-    padding-bottom: 118px;
+    padding-bottom: 120px;
     margin-bottom: 50px;
 
     &__img {
@@ -41,13 +41,33 @@
       
       & img {
       width: 1200px;
+      height: auto;
       position: absolute;
       margin-left: -605px;
       left: 50%;
       }
 
-      h2 {
+      & h2 {
         z-index: 2;
+        right: 40px;
+        top: 58px;
+      }
+    }
+  }
+}
+
+@media @desktop-width {
+  .main-post {
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 94px;
+    margin-bottom: 50px;
+
+    &__img {
+      
+      & h2 {
+        right: 130px;
+        top: 44px;
       }
     }
   }

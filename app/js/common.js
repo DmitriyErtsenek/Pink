@@ -92,61 +92,14 @@ $(document).ready(function(){
   });
 });
 
-$('.app-editor__range-input').jRange({
-    from: 0,
-    to: 100,
-    step: 1,
-    theme: false,
-    showScale: false,
-    showLabels: false,
-    format: '%s',
-    width: 240,
-    showLabels: true,
-    snap: true
-});
+var elem = document.querySelector('.app-editor__range-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
 
-$('.app-editor__range-crop-input').jRange({
-    from: 0,
-    to: 100,
-    step: 1,
-    theme: false,
-    showScale: false,
-    showLabels: false,
-    format: '%s',
-    width: 202,
-    showLabels: true,
-    snap: true
-});
+var elem = document.querySelector('.app-editor__range-crop-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
 
-$('.app-editor__range-fill-input').jRange({
-    from: 0,
-    to: 100,
-    step: 1,
-    theme: false,
-    showScale: false,
-    showLabels: false,
-    format: '%s',
-    width: 202,
-    showLabels: true,
-    snap: true
-});
+var elem = document.querySelector('.app-editor__range-fill-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
 
-$('.app-editor__range-contrast-input').jRange({
-    from: 0,
-    to: 100,
-    step: 1,
-    theme: false,
-    showScale: false,
-    showLabels: false,
-    format: '%s',
-    width: 202,
-    showLabels: true,
-    snap: true
-});
-
-
-
-
-
-
-      
+var elem = document.querySelector('.app-editor__range-contrast-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
