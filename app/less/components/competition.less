@@ -1,0 +1,739 @@
+.competition {
+  
+  
+  &__wrapper {
+    position: relative;
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    position: absolute;
+    top: -158px;
+    left: -120px;
+    margin-left: 50%;
+    width: 240px;
+    text-align: center;
+    .font(@open-sans, 24px, 30px, 300, #fff);
+  }
+
+  &__form-header {
+    width: 280px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding-top: 46px;
+    text-align: center;
+    .font(@open-sans, 14px, 30px, 400, @nav-color);
+
+    & span {
+      display: none;
+    }
+  }
+
+  &__user-data {
+    width: 280px;
+    height: 366px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    & input[type="text"], {
+      box-sizing: border-box;
+      height: 60px;
+      padding: 20px;
+      border: 2px solid #e5e5e5;
+      border-radius: 3px;
+      margin-bottom: 25px;
+      outline: none;
+
+      &:hover {
+        border: 2px solid #000;
+      }
+
+      &:focus {
+        border: 2px solid @pink-color;
+      }
+    }
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    &::-webkit-input-placeholder {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+    };
+
+    &::-moz-placeholder          {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+      opacity: 1;
+    };
+
+    &:-moz-placeholder           {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+    };
+    
+    &:-ms-input-placeholder      {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+    };
+
+    &::-ms-input-placeholder      {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+    };
+  }
+
+  &__user-label {
+    .font(@open-sans, 14px, 30px, 400, @pink-color);
+    text-transform: uppercase;
+    position: relative;
+    left: 25px;
+    bottom: 5px;
+  }
+
+  &__achievements {
+    background-color: #f2f2f2;
+  }
+
+  &__achievements-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    
+    & input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    & label {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+      margin-bottom: 52px;
+      padding-left: 90px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        background-color: #fff;
+        width: 35px;
+        height: 35px;
+        border: 2px solid #e5e5e5;
+      }
+
+      &:hover::before {
+        border: 2px solid #000;
+      }
+    }
+    
+    input+label {
+      cursor: pointer;
+    }
+
+    input:checked + label::before {
+        background-image: url("../../img/tick.svg");
+        background-repeat: no-repeat;
+        background-size: 22px 16px;
+        background-position: 7px 9px;
+      
+    }
+
+    & h2 {
+      .font(@open-sans, 14px, 18px, 400, @pink-color);
+      text-transform: uppercase;
+      text-align: center;
+      width: 230px;
+      margin: 0 auto;
+      padding-top: 34px;
+      padding-bottom: 42px;
+    }
+  }
+
+  &__phone-email-wrapper {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 280px;
+    padding-top: 35px;
+    min-height: 295px;
+    margin: 0 auto;
+
+    & h2 {
+      display: none;
+    }
+
+    & input[type="tel"],
+    & input[type="email"] {
+      box-sizing: border-box;
+      height: 60px;
+      padding: 20px;
+      border: 2px solid #e5e5e5;
+      border-radius: 3px;
+      margin-bottom: 25px;
+      outline: none;
+
+      &:hover {
+        border: 2px solid #000;
+      }
+
+      &:focus {
+        border: 2px solid @pink-color;
+      }
+    }
+  }
+
+  &__phone,
+  &__email {
+    .font(@open-sans, 14px, 18px, 400, @pink-color);
+      text-transform: uppercase;
+      text-align: left;
+      padding-left: 22px;
+      margin-bottom: 12px;
+  }
+
+  &__apps {
+    background-color: #f2f2f2;
+  }
+  
+  &__ios,
+  &__android,
+  &__ms {
+    margin-bottom: 45px;
+  }
+
+  &__apps-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    min-height: 338px;
+
+    & input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    & label {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+      position: relative;
+      padding-left: 90px;
+      margin-bottom: 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border: 2px solid #e5e5e5;
+        border-radius: 50%;
+        left: 20px; 
+        bottom: -8px;
+      }
+    }
+
+    & label:hover::before {
+      border-color: #000;
+    }
+
+    & label:active::before {
+      border-color: @pink-color;
+    }
+
+    & h2 {
+      .font(@open-sans, 14px, 18px, 400, @pink-color);
+      text-transform: uppercase;
+      text-align: center;
+      width: 230px;
+      margin: 0 auto;
+      padding-top: 34px;
+      padding-bottom: 42px;
+    }
+  
+    input:checked + label::before {
+      background-size: 15px 15px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-image: url("../../img/check.svg");     
+    }
+  }
+  
+  &__emotion {
+    min-height: 320px;
+    margin-bottom: 20px;
+    
+    & h2 {
+      .font(@open-sans, 14px, 18px, 400, @pink-color);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    & textarea {
+      height: 200px;
+      width: 280px;
+      box-sizing: border-box;
+      padding: 20px;
+      resize: none;
+      border: 2px solid #e5e5e5;
+      outline: none; 
+
+      &:hover {
+        border: 2px solid #000;
+      }
+
+      &:focus {
+        border: 2px solid @pink-color;
+      }
+
+      &::-webkit-input-placeholder {
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+      };
+
+      &::-moz-placeholder          {
+        .font(@open-sans, 18px, 30px, 400, @nav-color);
+        opacity: 1;
+      };
+
+      &:-moz-placeholder           {
+        .font(@open-sans, 18px, 30px, 400, @nav-color);
+      };
+      
+      &:-ms-input-placeholder      {
+        .font(@open-sans, 18px, 30px, 400, @nav-color);
+      };
+
+      &::-ms-input-placeholder      {
+        .font(@open-sans, 18px, 30px, 400, @nav-color);
+      };
+    }
+  }
+  
+  &__emotion-wrapper {
+    padding-top: 40px;
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  &__btn {
+    .font(@open-sans, 18px, 30px, 700, #fff);
+    text-transform: uppercase;
+    display: flex;
+    background-color: #2aab6d;
+    border: none;
+    width: 280px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    padding: 16px 40px;
+    border-radius: 3px;
+    outline: none;
+
+    &:hover {
+      background-color: #1c9b5e;
+    }
+
+    &:active {
+      color: rgba(255,255,255, 0.3);
+    }
+  }
+
+  &__footnote {
+    .font(@open-sans, 14px, 30px, 400, @nav-color);
+    text-transform: uppercase;
+    width: 200px;
+    margin: 0 auto;
+
+    & span {
+      color: @pink-color;
+    }
+  }
+}
+
+@-moz-document url-prefix() { //special for mozilla
+  .competition__phone-email input[type="tel"],
+  .competition__phone-email input[type="email"] {
+    padding-top: 10px;
+  }
+
+  .competition__user-data {
+    & input[type="text"], {
+      padding-top: 10px;
+    }
+  }
+}
+
+
+@media @tablet-width {
+  .competition {
+    &__header {
+      .font(@open-sans, 50px, 60px, 300, #fff);
+      top: -290px;
+      left: -250px;
+      width: 500px;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      width: 620px;
+      margin: 0 auto;
+    }
+
+    &__form-header {
+      order: 1;
+      .font(@open-sans, 18px, 30px, 400, @nav-color);
+      width: 500px;
+      margin-bottom: 70px;
+      padding-top: 95px;
+
+      & span {
+        display: block;
+      }
+    }
+    
+    &__wrapper {
+      width: 700px;
+    }
+
+    &__user-data {
+      order: 2;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 620px;
+
+      & input[type="text"] {
+        flex-grow: 1;
+        width: 520px;
+      }
+    }
+
+    &__user-label {
+      position: static;
+      margin-right: 20px;
+      padding-top: 10px;
+    }
+    
+    &__apps  {
+      order: 3;
+      position: relative;
+      box-sizing: border-box;
+      width: 620px;
+      height: 295px;
+      margin: 0 auto;
+      margin-bottom: 68px;
+      padding: 55px 60px;
+      background-color: #fff;
+      border: 2px solid #e5e5e5;
+
+      & h2 {
+        position: absolute;
+        .font(@open-sans, 14px, 18px, 400, @pink-color);
+        text-transform: uppercase;
+        text-align: center;
+        width: 355px;
+        background-color: #fff;
+        top: -10px;
+        left: 50%;
+        margin-left: -183px;
+        padding: 0 10px;
+      }
+    }
+    
+
+    &__achievements {
+      order: 5;
+      margin-bottom: 68px;
+
+      &-wrapper {
+        position: relative;
+        box-sizing: border-box;
+        border: 2px solid #e5e5e5;
+        width: 620px;
+        min-height: 550px;
+        padding: 50px 60px;
+        padding-bottom: 0px;
+        background-color: #fff;
+        
+        & h2 {
+          position: absolute;
+          width: 410px;
+          padding: 0 10px;
+          background-color: #fff;
+          left: 50%;
+          margin-left: -215px;
+          top: -10px;
+        }
+
+        & label {
+          padding-left: 60px;
+
+          &::before {
+            left: 60px;
+          }
+        }
+      }
+    }
+
+    &__phone-email {
+      order: 4;
+      border: 2px solid #e5e5e5;
+      margin-bottom: 67px;
+      
+      &-wrapper {
+        position: relative;
+        width: 620px;
+        min-height: 305px;
+        padding-top: 45px;
+
+        & input {
+          width: 500px;
+          margin: 0 auto;
+
+        }
+
+        & input#userTel {
+          order: 1;
+          margin-bottom: 20px;
+          padding-right: 60px;
+        }
+
+        & input#userEmail {
+          order: 3;
+          padding-right: 60px;
+        }
+      
+        & label {
+          padding-left: 85px;
+        }
+      }
+
+      & h2 {
+        display: block;
+        position: absolute;
+        width: 200px;
+        .font(@open-sans, 14px, 18px, 400, @pink-color);
+        text-transform: uppercase;
+        text-align: center;
+        background-color: #fff;
+        padding: 0 30px;
+        top: -22px;
+        left: 50%;
+        margin-left: -125px;
+      }
+    }
+
+    &__phone {
+      order: 2;
+      margin-bottom: 30px;
+    }
+
+    &__phone-icon {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      background-color: #e5e5e5;
+      top: 47px;
+      right: 62px;
+      background-image: url("../../img/phone-icon.svg");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: 50% 50%;
+    }
+
+    &__email {
+      order: 4;
+    }
+
+    &__email-icon {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      right: 62px;
+      top: 175px;
+      background-color: #e5e5e5;
+      background-image: url("../../img/mail-icon.svg");
+      background-repeat: no-repeat;
+      background-size: 18px 13px;
+      background-position: 50% 50%;
+    }
+
+    &__btn {
+      order: 7;
+      margin-left: 0px;
+    }
+
+    &__footnote {
+      order: 8;
+      position: absolute;
+      right: 20px;
+      bottom: 45px;
+    }
+  
+    &__emotion {
+      order: 6;
+      position: relative;
+      box-sizing: border-box;
+      border: 2px solid #e5e5e5;
+      min-height: 290px;
+      padding-top: 47px;
+      margin-bottom: 70px;
+        
+      &-wrapper {
+        display: flex;
+        padding-top: 0px;
+        width: 100%;
+
+        & h2 {
+          position: absolute;
+          width: 220px;
+          padding: 0 20px;
+          top: -20px;
+          background-color: #fff;
+          left: 50%;
+          margin-left: -130px;
+        }
+
+        & textarea {
+          width: 500px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@media @desktop-width {
+  .competition {
+    &__header {
+      width: 760px;  
+      left: 50%;
+      margin-left: -380px;
+      top: -260px;  
+    }
+
+    &__wrapper {
+      width: 1200px;
+    }
+
+    &__form {
+      width: 940px;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &-header {
+        width: 760px;
+      }
+    }
+  
+    &__user-data {
+      width: 435px;
+      margin-left: 0px;
+
+      & input#userSurname,
+      & input#userName,
+      & input#userPatronymic {
+        width: 338px;
+      }
+    }
+
+    &__apps {
+      margin: 0;
+      width: 435px;
+      height: 305px;
+    }
+
+    &__phone-email {
+      width: 100%;
+
+      &-wrapper {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        min-height: 160px;
+        padding: 43px 58px;
+
+        & input#userTel,
+        & input#userEmail {
+          width: 374px;
+          margin: 0;
+        }
+      }
+    }
+    
+    &__phone {
+      height: 20px;
+      position: absolute;
+      top: 120px;
+      left: 0px;
+    }
+
+    &__phone-icon {
+      top: 45px;
+      left: 374px;
+    }
+    
+    &__email {
+      position: absolute;
+      top: 120px;
+      right: 290px;
+    }
+
+    &__email-icon {
+      top: 45px;
+      right: 60px;
+    }
+  
+    &__achievements-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 230px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 120px;
+      padding-right: 40px;
+      
+      & label {
+        width: 210px;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 50px;
+
+        &::before {
+          left: -60px;
+        }
+      }
+    }
+    
+    &__emotion {
+      width: 936px;
+      min-height: 213px;
+      padding-top: 45px;
+      padding-bottom: 45px;
+
+      & textarea {
+        width: 816px;
+        height: 127px;
+      }
+    }
+
+    &__footnote {
+      display: none;
+    }
+
+    &__footnote-desktop {
+      width: 320px;
+      .font(@open-sans, 14px, 30px, 400, @nav-color);
+      text-transform: uppercase;
+      margin-right: 0px;
+      order: 8;
+
+      & span {
+        color: @pink-color;
+      }
+    }
+
+  }
+}
+
+
+  
+
