@@ -1,11 +1,13 @@
 .main-footer {
   min-height: 127px;
+  max-width: 2550px;
   
   &__wrapper {
     display: flex;
-    justify-content: space-around;
-    max-width: 1200px;
+    justify-content: space-between;
+    max-width: 940px;
     margin: 0 auto;
+    padding: 0 40px;
 
   }
 
@@ -28,6 +30,24 @@
       fill: @pink-color;
       opacity: 0.3;
     }
+  }
+
+  &__logo-desktop {
+      display: none;
+
+      &:hover {
+        .text {
+          fill: @pink-color;
+        }
+      }
+
+      &:active {
+        opacity: 0.3;
+
+        .text {
+          fill: #000;
+        }
+      }
   }
 
   &__links {
@@ -71,7 +91,7 @@
       background-image: url("../../img/playmarketIcon.svg");
       background-repeat: no-repeat;
       background-size: 15px 13px;
-      background-position: 50% 50%;
+      background-position: 52% 50%;
     }
   }
 
@@ -120,19 +140,68 @@
 @media @mobile-width {
   .main-footer {
     display: none;
+
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__logo-footer {
+      margin-bottom: 35px;
+      padding-top: 40px;
+      height: auto;
+    }
+
+    &__logo-desktop {
+      display: none;
+    }
+    
+    &__link {
+      text-indent: -9999px;
+    }
+
+    &__links {
+      margin-bottom: 40px;
+    }
+
+    &__developed-by {
+      width: 130px;  
+
+      & p {
+        margin: 0;
+      }
+    }
+    
+  }
+
+  .main-footer--mobile {
+    display: flex;
   }
 }
 
 @media @desktop-width {
   .main-footer {
     min-height: 197px;
+    
+    &__logo-desktop {
+      display: block;
+    }
+
+    &__logo-tablet {
+      display: none;
+    }
 
     &__wrapper {
-      padding-top: 37px;
+      padding-top: 42px;
+
+      &-photo {
+        padding-top: 20px;
+      }
     }
  
     &__developed-by {
-      width: 160px;
+      width: 150px;
+      margin-right: 0px;
 
       & p {
         font-size: 18px;
@@ -156,9 +225,19 @@
         background-image: url("../../img/decorateblock2.svg");
         background-repeat: no-repeat;
         z-index: 2;
-        top: -381px;
+        top: -510px;
+        left: 50%;
+        margin-left: -830px;
+      }
+    }
+
+    &__wrapper-photo {
+      &:before {
+        display: none;
       }
     }
   }
 }
+
+
 

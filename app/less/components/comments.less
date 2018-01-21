@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 354px;
   background-color: #fff;
+  box-shadow: 0 4px 0 rgba(255,255,255,1);
 
   & .owl-nav {
     display: none;
@@ -74,7 +75,7 @@
 
 @media @tablet-width {
   .comments {
-    min-height: 270px;
+    min-height: 280px;
 
     & .owl-nav {
       display: none;
@@ -123,25 +124,33 @@
     min-height: 415px;
     padding-top: 156px;
     box-sizing: border-box;
-    background-image: url("../../img/quotes.svg");
-    background-repeat: no-repeat;
-    background-size: 79px 63px;
-    background-position: 50% 20%;
-    
+
     .owl-dots {
       display: none;
     }
     
+    .owl-nav {
+      display: block;
+    }
+
     .owl-next {
       position: absolute;
       font-size: 0px;
       opacity: 0.3;
       width: 22px;
       height: 41px;
-      bottom: 140px;
+      top: 60px;
       left: -120px;
       background-image: url("../../img/navIcon.svg");
       background-size: 22px 41px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0.1;
+      }
     }
 
     .owl-prev {
@@ -150,13 +159,20 @@
       opacity: 0.3;
       width: 22px;
       height: 41px;
-      bottom: 140px;
+      top: 60px;
       right: -120px;
       transform: rotate(180deg);
       background-image: url("../../img/navIcon.svg");
       background-size: 22px 41px;
-    }
 
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0.1;
+      }
+    }
 
     &__user {
       font-size: 24px;
@@ -172,8 +188,20 @@
 
     &__wrapper {
       width: 700px;
-    }
+      position: relative;
 
-    
+      &::before {
+      content: "";
+      position: absolute;
+      width: 79px;
+      height: 63px;
+      top: -100px;
+      left: 305px;
+      background-image: url("../../img/quotes.svg");
+      background-repeat: no-repeat;
+      background-size: 79px 63px;
+      background-position: 50% 20%;
+      }
+    }
   }
 }

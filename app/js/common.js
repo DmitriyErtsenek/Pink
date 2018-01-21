@@ -52,7 +52,7 @@ $(document).ready(function(){
     loop:true, //Зацикливаем слайдер
     margin:10, //Отступ от картино если выводите больше 1
     nav:true, //Отключил навигацию
-    autoplay:true, //Автозапуск слайдера
+    autoplay:false, //Автозапуск слайдера
     smartSpeed:1000, //Время движения слайда
     autoplayTimeout:7000, //Время смены слайда
     responsive:{ //Адаптация в зависимости от разрешения экрана
@@ -92,5 +92,17 @@ $(document).ready(function(){
   });
 });
 
+var elem = document.querySelector('.app-editor__range-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
 
-      
+var elem = document.querySelector('.app-editor__range-crop-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
+
+var elem = document.querySelector('.app-editor__range-fill-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
+
+var elem = document.querySelector('.app-editor__range-contrast-input');
+var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
+
+var years = promt('Сколько Вам лет?', 100);
+alert('Вам '+ years + ' лет!');
