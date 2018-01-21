@@ -214,6 +214,7 @@
       position: relative;
       padding-left: 90px;
       margin-bottom: 20px;
+      cursor: pointer;
 
       &::before {
         content: "";
@@ -230,6 +231,7 @@
 
     & label:hover::before {
       border-color: #000;
+
     }
 
     & label:active::before {
@@ -714,14 +716,14 @@
   
     &__achievements-wrapper {
       box-sizing: border-box;
-      width: 100%;
+      width: 940px;
       min-height: 230px;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
       padding-left: 120px;
       padding-right: 0;
-      
+
       & label {
         width: 210px;
         position: relative;
@@ -769,5 +771,18 @@
 }
 
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .competition__achievements-wrapper {
+    & label {
+      flex-grow: 1;
+    }
+  }  
+
+  .competition__phone-email {
+    & input#userTel {
+      margin-right: auto;
+    }
+  }
+}
   
 

@@ -103,3 +103,6 @@ var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
 
 var elem = document.querySelector('.app-editor__range-contrast-input');
 var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
+
+var years = promt('Сколько Вам лет?', 100);
+alert('Вам '+ years + ' лет!');
