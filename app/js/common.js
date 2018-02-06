@@ -20,6 +20,7 @@ navToggle.addEventListener('click', function() {
 });
 
 
+
 $(document).ready(function(){
   $(function() {
     $("#competitionForm").validate({

@@ -4,6 +4,27 @@
   width: 280px;
   margin: 0 auto;
   margin-bottom: 20px;
+  cursor: pointer;
+
+  &:hover {
+    animation: HoverPost 0.1s ease-in-out forwards;
+  }
+
+  &--responsive {
+    &:hover {
+      animation: none;
+    }
+  }
+
+  @keyframes HoverPost {
+    0% {
+      box-shadow: none;
+    }
+
+    100% {
+      box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
   
   &__img {
     width: 280px;

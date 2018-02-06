@@ -325,13 +325,24 @@
     padding: 16px 44px;
     border-radius: 3px;
     outline: none;
+    cursor: pointer;
 
     &:hover {
-      background-color: #1c9b5e;
+      animation: HoverBtn 0.2s ease-in-out forwards;
     }
 
     &:active {
       color: rgba(255,255,255, 0.3);
+    }
+  }
+
+  @keyframes HoverBtn {
+    0% {
+      background-color: #2aab6d;
+    }
+
+    100% {
+      background-color: #1c9b5e;
     }
   }
 
