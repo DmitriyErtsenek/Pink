@@ -32,19 +32,23 @@ gulp.task('scripts', function() {
     return gulp.src([
         'app/libs/jquery/dist/jquery.min.js',
         'app/libs/owl.carousel/dist/owl.carousel.min.js',
-        'app/libs/powerange/dist/powerange.min.js'
+        'app/libs/powerange/dist/powerange.min.js',
+        'app/libs/jquery-validation/dist/jquery.validate.min.js'
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('app/js'));
 });
 
-
-gulp.task('css-libs', ['less'], function() {
-    return gulp.src('app/css/libs.css')
-    .pipe(cssnano())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('app/css'));
+gulp.task('css-libs', function(){
+  return gulp.src([
+    'app/libs/owl.carousel/dist/assets/owl.theme.default.css',
+    'app/libs/owl.carousel/dist/assets/owl.carousel.css',
+    'app/libs/powerange/dist/powerange.css'
+    ])
+  .pipe(concat('libs.min.css'))
+  .pipe(cssnano())
+  .pipe(gulp.dest('app/css'));
 });
 
 gulp.task('less', function() {

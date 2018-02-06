@@ -1,5 +1,7 @@
 var navMain   = document.querySelector('.main-nav'),
     navToggle = document.querySelector('.main-nav__toggle');
+const formError = document.querySelector('.form-error');
+const formClose = document.querySelector('.form-error__close');
 
 
 
@@ -19,90 +21,40 @@ navToggle.addEventListener('click', function() {
 
 
 $(document).ready(function(){
-  $(".preview__slider").owlCarousel({
-    singleItem:true,
-    animateOut: 'fadeOut',
-    touchDrag: false,
-    loop:true, //Зацикливаем слайдер
-    margin:10, //Отступ от картино если выводите больше 1
-    nav:false, //Отключил навигацию
-    autoplay:true, //Автозапуск слайдера
-    smartSpeed:1000, //Время движения слайда
-    autoplayTimeout:2000, //Время смены слайда
-    responsive:{ //Адаптация в зависимости от разрешения экрана
-      0:{
-        items:1
+  $(function() {
+    $("#competitionForm").validate({
+      rules: {
+        user_surname: {
+          required: true
+        },
+        user_name: {
+          required: true
+        },
+        user_tel: {
+          required: true,
+          digits: true
+        },
+        user_email: {
+          required: true,
+          email: true
+        },
+        competition__textarea: {
+          required: true
+        }
       },
-      600:{
-        items:1
+      errorPlacement: function(error, element) {
+        return true;
       },
-      1000:{
-        items:1
+
+      invalidHandler: function(event, validator) {
+        $('.form-error').css('display','block');
+
+        formClose.addEventListener('click', function(){
+          formError.style.display = 'none';
+        });
       }
-    }
+    });
   });
 });
 
-$(document).ready(function(){
-  $(".comments__slider").owlCarousel({
-    dots:true,
-    singleItem:true,
-    autoHeight:true,
-    touchDrag: true,
-    loop:true, //Зацикливаем слайдер
-    margin:10, //Отступ от картино если выводите больше 1
-    nav:true, //Отключил навигацию
-    autoplay:false, //Автозапуск слайдера
-    smartSpeed:1000, //Время движения слайда
-    autoplayTimeout:7000, //Время смены слайда
-    responsive:{ //Адаптация в зависимости от разрешения экрана
-      0:{
-        items:1
-      },
-      600:{
-        items:1
-      },
-      1000:{
-        items:1
-      }
-    }
-  });
-});
 
-$(document).ready(function(){
-  $(".price__slider").owlCarousel({
-    dots:true,
-    singleItem:true,
-    touchDrag:true,
-    loop:true, //Зацикливаем слайдер
-    margin:0, //Отступ от картино если выводите больше 1
-    nav:false, //Отключил навигацию
-    autoplay:false, //Автозапуск слайдера
-    responsive:{ //Адаптация в зависимости от разрешения экрана
-      0:{
-        items:1
-      },
-      600:{
-        items:1
-      },
-      1000:{
-        items:1
-      }
-    }
-  });
-});
-
-var elem = document.querySelector('.app-editor__range-input');
-var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
-
-var elem = document.querySelector('.app-editor__range-crop-input');
-var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
-
-var elem = document.querySelector('.app-editor__range-fill-input');
-var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
-
-var elem = document.querySelector('.app-editor__range-contrast-input');
-var init = new Powerange(elem, { min: 0, max: 100, start: 0, hideRange:true });
-
-var years = promt('Сколько Вам лет?', 100);
-alert('Вам '+ years + ' лет!');

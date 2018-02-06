@@ -134,7 +134,7 @@
         <h1 class="competition__header">
            Конкурс на самое безбашеное путешествие с Пинк
         </h1>
-        <form method="post" class="competition__form">
+        <form method="post" class="competition__form" id="competitionForm">
           <h2 class="competition__form-header">
             Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!<span>Пожалуйста, заполните форму ниже:</span>
           </h2>
@@ -142,11 +142,11 @@
             <label class="competition__user-label" for="userSurname">
               Фамилия:
             </label>
-            <input type="text" name="userSurname" id="userSurname" placeholder="Укажите фамилию">
+            <input type="text" name="user_surname" id="userSurname" placeholder="Укажите фамилию">
             <label class="competition__user-label" for="userName">
               Имя:
             </label>
-            <input type="text" name="userName" id="userName" placeholder="Введите ваше имя">
+            <input type="text" name="user_name" id="userName" placeholder="Введите ваше имя">
             <label class="competition__user-label" for="userPatronymic">
               Отчество:
             </label>
@@ -157,11 +157,11 @@
               <h2>
                 Ваши безбашенные достижения в путешествии
               </h2>
-              <input type="checkbox" name="achievement" id="achievement-1" checked>
+              <input type="checkbox" name="achievement" id="achievement-1">
               <label class="competition-achievements-1" for="achievement-1">
                 Сделал селфи с акулой
               </label>
-              <input type="checkbox" name="achievement" id="achievement-2" checked>
+              <input type="checkbox" name="achievement" id="achievement-2">
               <label class="competition-achievements-2" for="achievement-2">
                 Обгорел на пляже
               </label>
@@ -173,7 +173,7 @@
               <label class="competition-achievements-4" for="achievement-4">
                 Накупил сувениров
               </label>
-              <input type="checkbox" name="achievement" id="achievement-5" checked>
+              <input type="checkbox" name="achievement" id="achievement-5">
               <label class="competition-achievements-5" for="achievement-5">
                 Удержал башню
               </label>
@@ -187,10 +187,10 @@
             <div class="competition__phone-email-wrapper">
               <h2>Контактная информация</h2>
               <label class="competition__phone" for="userTel">Номерок телефончика</label>
-              <input id="userTel" type="tel" name="tel" placeholder="Номер, пожалуйста">
+              <input id="userTel" type="tel" name="user_tel" placeholder="Номер, пожалуйста">
               <div class="competition__phone-icon"></div>
               <label class="competition__email" for="userEmail">Адресок почты</label>
-              <input id="userEmail" type="email" name="email" placeholder="E-mail, пожалуйста">
+              <input id="userEmail" type="email" name="user_email" placeholder="E-mail, пожалуйста">
               <div class="competition__email-icon"></div>
             </div>
           </div>
@@ -202,7 +202,7 @@
                 <label for="ios">Pink для iOS</label>
               </div>
               <div class="competition__android">
-                <input type="radio" name="app" id="android">
+                <input type="radio" name="app" id="android" checked="">
                 <label for="android">Pink на Android</label>
               </div>
               <div class="competition__ms">
@@ -214,7 +214,7 @@
           <div class="competition__emotion">
             <div class="competition__emotion-wrapper">
               <h2>Опишите свои эмоции</h2>
-              <textarea placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+              <textarea name="competition__textarea" class="competition__textarea" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
             </div>
           </div>
           <button class="competition__btn">Отправить форму</button>
@@ -233,12 +233,12 @@
       </div>
       <button class="popup-form-sent__close">Закрыть окно</button>
     </div>
-    <div class="popup-form-error popup-form-error--hidden">
+    <div class="form-error js-form-message">
       <h2>Что-то пошло не так!</h2>
       <p>
         Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
       </p>
-      <button class="popup-form-error__close">Ок</button>
+      <button class="form-error__close">Ок</button>
     </div>
   </main>
   <footer class="main-footer main-footer--mobile">
