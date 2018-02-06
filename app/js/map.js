@@ -12,7 +12,7 @@ ymaps.ready(init);
       hintContent: 'Pink',
       balloonContent: 'Pink' }, { 
       iconLayout: 'default#image',
-      iconImageHref: '../img/mapicon.svg',
+      iconImageHref: 'img/mapicon.svg',
       iconImageSize: [35, 35],
       iconImageOffset: [-3, -42]
     });
