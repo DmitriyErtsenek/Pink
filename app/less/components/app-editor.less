@@ -178,12 +178,23 @@
     cursor: pointer;
 
     &:hover {
-      background-color: @pink-color;
-      color: #fff;
+      animation: pushBtn 0.2s ease-in-out forwards;
     }
 
     &:active {
       color: rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes pushBtn {
+      0% {
+        background-color: transparent;
+        color: @pink-color;
+      }
+
+      100% {
+        background-color: @pink-color;
+        color: #fff;
+      }
     }
   }
   
@@ -205,12 +216,22 @@
     cursor: pointer;
     
     &:hover {
-      opacity: 1;
+      animation: cancelBtn 0.2s ease-in-out forwards;
     }
 
     &:active {
       color: rgba(255, 255, 255, 0.3);
       background-color: #b5b9be;
+    }
+
+    @keyframes cancelBtn {
+      0% {
+        opacity: 0.3;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
   }
 }

@@ -31,13 +31,24 @@
     margin-bottom: 32px;
 
     &:hover {
-      background-color: #fff;
-      color: @pink-color;    
+      animation: downloadBtn 0.2s ease-in-out forwards;    
     }
 
     &:active {
       background-color: #fff;
       color: rgba(210, 40, 86, 0.3);
+    }
+
+    @keyframes downloadBtn {
+      0% {
+        background-color: transparent;
+        color: #fff;
+      }
+
+      100% {
+        background-color: #fff;
+        color: @pink-color;
+      }
     }
   }
 

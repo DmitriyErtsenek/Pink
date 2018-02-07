@@ -89,6 +89,20 @@
     background-image: url("../img/iphone-case-mobile@1x.png");
     background-size: 157px 278px;
 
+    .owl-item.owl-animated-out {
+      animation: slide 1s !important;
+    }
+
+    @keyframes slide {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
     @media @retina2x {
       background-image: url("../img/iphone-case-mobile@2x.png");
     }
@@ -201,7 +215,6 @@
       height: 481px;
       left: 0px;
       background-image: none;
-
     }
 
     &__item-1 {

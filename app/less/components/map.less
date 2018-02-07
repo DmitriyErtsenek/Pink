@@ -9,7 +9,14 @@
     background-image: url("../img/decorateblock2.svg");
     background-repeat: no-repeat;
     z-index: 2;
+  }
+}
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .map-wrapper {
+    &::before {
+      display: none;
+    }  
   }
 }
 

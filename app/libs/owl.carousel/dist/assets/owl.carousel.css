@@ -101,13 +101,13 @@
   z-index: 1; }
 
 .owl-carousel .fadeOut {
-  animation-name: fadeOut; }
+  animation-name: fadeOut !important; }
 
 @keyframes fadeOut {
   0% {
-    opacity: 1; }
+    opacity: 1 !important; }
   100% {
-    opacity: 0; } }
+    opacity: 0 !important; } }
 
 /*
  * 	Owl Carousel - Auto Height Plugin
